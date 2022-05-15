@@ -27,9 +27,22 @@ for i in range(n):
     if a + b <= c:
         c = l[-n + 3 + i]
 
+
 if a + b <= c:
     print("Error")
 else:
+    x = int()
+    x1 = int()
     pp = (a + b + c) / 2
     S = (pp * (pp - a) * (pp - b) * (pp - c))**0.5
     print(f"Площадь полученного треугольника: {S}")
+    d = b ** 2 - 4 * a * c
+    if d > 0:
+        x = (-b + d ** 0.5) / (2 * a)
+        x1 = (-b - d ** 0.5) / (2 * a)
+    elif d == 0:
+        x = -b / (2 * a)
+    elif d < 0:
+        x = None
+        x1 = None
+    print(f"\nКорень квадратного уравнения: {x}, {x1}")
